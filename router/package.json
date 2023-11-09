@@ -1,0 +1,15 @@
+{
+  "name": "@luly/router",
+  "version": "1.0.0",
+  "description": "Router for a Basic Backend Development Framework with Hexagonal Architecture based on Express",
+  "scripts": {
+    "test": "echo \"No test specified\""
+  },
+  "author": "Marvin Quiñónez",
+  "license": "MIT",
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+  }
+}

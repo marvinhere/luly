@@ -1,0 +1,21 @@
+{
+  "name": "@luly/cli",
+  "version": "1.0.0",
+  "description": "CLI for a Basic Backend Development Framework with Hexagonal Architecture based on Express",
+  "main": "cli.js",
+  "bin": {
+    "luly": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"No test specified\"",
+    "new": "node cli.js new",
+    "create": "node cli.js create",
+    "build":"node cli.js build"
+  },
+  "author": "Marvin Quiñónez",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "yargs": "^17.7.2"
+  }
+}
