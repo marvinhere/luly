@@ -1,4 +1,6 @@
 cli/node_modules
+cli/.npmignore
 router/node_modules
 router/dist
+router/.npmignore
 readme.md
