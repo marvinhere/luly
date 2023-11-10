@@ -5,4 +5,3 @@ router/dist
 router/.npmignore
 router/decorator.js
 router/router.js
-readme.md
