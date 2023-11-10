@@ -1,9 +1,13 @@
 {
   "name": "@luly/router",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Router for a Basic Backend Development Framework with Hexagonal Architecture based on Express",
   "scripts": {
     "test": "echo \"No test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marvinhere/luly/tree/main/router"
   },
   "author": "Marvin Quiñónez",
   "license": "MIT",

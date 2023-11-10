@@ -3,4 +3,6 @@ cli/.npmignore
 router/node_modules
 router/dist
 router/.npmignore
+router/decorator.js
+router/router.js
 readme.md

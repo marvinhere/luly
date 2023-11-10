@@ -1,6 +1,7 @@
 {
   "name": "@luly/cli",
-  "version": "1.0.0",
+  "version": "1.0.3",
+  "preferGlobal": true,
   "description": "CLI for a Basic Backend Development Framework with Hexagonal Architecture based on Express",
   "main": "cli.js",
   "bin": {
@@ -10,7 +11,11 @@
     "test": "echo \"No test specified\"",
     "new": "node cli.js new",
     "create": "node cli.js create",
-    "build":"node cli.js build"
+    "build": "node cli.js build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marvinhere/luly.git"
   },
   "author": "Marvin Quiñónez",
   "license": "MIT",

@@ -13,6 +13,10 @@ function createNewModule(newName){
     }
 
     let destinationFolderPath = path.join(process.cwd(),'src','App');
+    if (!fs.existsSync(destinationFolderPath)) {
+      fs.mkdirSync(destinationFolderPath);
+    }
+
     destinationFolderPath = path.join(destinationFolderPath, `${newName}`);
 
     // Comprueba si la carpeta de destino existe, si no, créala
