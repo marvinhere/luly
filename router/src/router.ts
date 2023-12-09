@@ -1,36 +1,41 @@
+
 const routeMetadataKey = "rutas";
 
-export function getRoutes(target: any): any{
-    const routes:any = [];
-    const proto = target.prototype;
-    for (const key of Object.getOwnPropertyNames(proto)) {
-      if(key!='constructor'){
-        const target2 = Object.getOwnPropertyDescriptors(proto)[key]['value'];
-        const routeInfo = Reflect.getMetadata(routeMetadataKey, target2 , key);
-        
-        if (routeInfo) {
-          routes.push({ method: routeInfo.method, path: routeInfo.path, key, middleware:routeInfo.middleware });
+  export function getRoutes(controllers: any[]): any {
+    const routes: any = [];
+    for (const controller of controllers) {
+      const controllerInst = new controller();
+      const proto = controller.prototype;
+      for (const key of Object.getOwnPropertyNames(proto)) {
+        if (key !== 'constructor') {
+          const target2 = Object.getOwnPropertyDescriptors(proto)[key]['value'];
+          const routeInfo = Reflect.getMetadata(routeMetadataKey, target2, key);
+          if (routeInfo) {
+            routes.push({
+              method: routeInfo.method,
+              path: routeInfo.path,
+              key,
+              middleware: routeInfo.middleware,
+              controller: controllerInst, // Almacena la instancia del controlador
+            });
+          }
         }
       }
-      
     }
   
     return routes;
   }
   
-  export function setRoutes(controllers:any,router:any): any{
-    for (const controller of controllers) {
-      const routes = getRoutes(controller);
-      for (const route of routes) {
-        const { method, path, key, middleware } = route;
-        const func = controller.prototype[key];
-        if(middleware.length!=0){
-          router[method](path,middleware,func);
-        }else{
-          router[method](path,func);
-        }
-        
+  export function setRoutes(controllers: any[], router: any): any {
+    for (const route of getRoutes(controllers)) {
+      const { method, path, key, middleware, controller } = route;
+      const func = controller[key].bind(controller); // Usa bind para asegurar de que 'this' sea el controlador
+      if (middleware.length !== 0) {
+        router[method](path, middleware, func);
+      } else {
+        router[method](path, func);
       }
     }
     return router;
   }
+  

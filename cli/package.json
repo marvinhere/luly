@@ -1,6 +1,6 @@
 {
   "name": "@luly/cli",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "preferGlobal": true,
   "description": "CLI for a Basic Backend Development Framework with Hexagonal Architecture based on Express",
   "main": "cli.js",

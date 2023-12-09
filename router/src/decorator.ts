@@ -42,25 +42,30 @@ export function Get(path: string): Function {
 }
 
 export function Post(path:string):Function{
-  path = path.replace(/^\/+|\/+$/g, '');
-  path = "/"+path
+ 
   return function (target:any, key:any){
-    Reflect.defineMetadata(routeMetadataKey,{ method: 'post', path}, target, key.name)
+    path = path.replace(/^\/+|\/+$/g, '');
+    path = "/"+path
+    const metadata = Reflect.getMetadata(routeMetadataKey,target,key.name) || []
+    Reflect.defineMetadata(routeMetadataKey,{ method: 'post', path,middleware:metadata.middleware ??[]}, target, key.name)
   }
 }
 
 export function Put(path:string):Function{
-  path = path.replace(/^\/+|\/+$/g, '');
-  path = "/"+path
+  
   return function (target:any, key:any){
-    Reflect.defineMetadata(routeMetadataKey,{ method: 'put', path}, target, key.name)
+    path = path.replace(/^\/+|\/+$/g, '');
+    path = "/"+path
+    const metadata = Reflect.getMetadata(routeMetadataKey,target,key.name) || []
+    Reflect.defineMetadata(routeMetadataKey,{ method: 'put', path,middleware:metadata.middleware ??[]}, target, key.name)
   }
 }
 
 export function Delete(path:string):Function{
-  path = path.replace(/^\/+|\/+$/g, '');
-  path = "/"+path
   return function (target:any, key:any){
-    Reflect.defineMetadata(routeMetadataKey,{ method: 'delete', path}, target, key.name)
+    path = path.replace(/^\/+|\/+$/g, '');
+    path = "/"+path
+    const metadata = Reflect.getMetadata(routeMetadataKey,target,key.name) || []
+    Reflect.defineMetadata(routeMetadataKey,{ method: 'delete', path,middleware:metadata.middleware ??[]}, target, key.name)
   }
 }
