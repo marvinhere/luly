@@ -99,7 +99,7 @@ function setPathDirectory(fileName,newName){
     return newPath
   }
   else if (fileName === 'application.controller.ts') {
-    const newPath = path.join(modulePath,"Infrastructure","Controller");
+    const newPath = path.join(modulePath,"Application","Controller");
     if (!fs.existsSync(newPath)) {
       fs.mkdirSync(newPath);
     }
@@ -203,7 +203,7 @@ function moduleNameValidation(name) {
   
   const lowercaseName = name.toLowerCase();
 
-  if (lowercaseName.length > 10) {
+  if (lowercaseName.length > 255) {
     throw new Error('The module name cannot exceed 10 characters.');
   }
 

@@ -16,12 +16,12 @@ This command creates a module structure:
     module-name
         |----Application
         |     |----module-name.service.ts
+        |     |----Controller
+        |           |----module-name.controller.ts
         |----Domain
         |     |----Interfaces
         |            |----module-name.interface.ts
         |----Infrastructure
-            |----Controller
-            |       |----module-name.controller.ts
             |----module-name.repository.ts
 
 ## Controllers
@@ -29,7 +29,6 @@ This command creates a module structure:
 Controllers for each module are created when generating the module. To use these controllers, you need to register them in the `router.ts` of the project, located at `project-name/src/router.ts`.
 
     //router.ts
-    // Add your controllers here
     const controllers = [UserController];
     const appRouter = setRoutes(controllers, express.Router());
 
