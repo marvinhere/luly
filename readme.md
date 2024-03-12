@@ -16,12 +16,12 @@ This command creates a module structure:
     module-name
         |----Application
         |     |----module-name.service.ts
+        |     |----Controller
+        |           |----module-name.controller.ts
         |----Domain
         |     |----Interfaces
         |            |----module-name.interface.ts
         |----Infrastructure
-            |----Controller
-            |       |----module-name.controller.ts
             |----module-name.repository.ts
 
 ## Controllers

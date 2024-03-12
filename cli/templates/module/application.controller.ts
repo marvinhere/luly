@@ -1,7 +1,8 @@
 import {Get, Post, Delete, Put, Router, Middleware} from "@luly/router/decorator";
 import { ApplicationService } from "../../Application/application.service";
-import { ApplicationRepository } from "../application.repository";
+import { ApplicationRepository } from "../../Infrastructure/application.repository";
 
+@Router("")
 export class ApplicationController{
 
     applicationService:ApplicationService;

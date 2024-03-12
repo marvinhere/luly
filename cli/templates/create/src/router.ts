@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import {setRoutes} from '@luly/router/router';
 
 //Add your controller class to the array

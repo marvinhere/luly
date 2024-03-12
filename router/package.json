@@ -1,6 +1,6 @@
 {
   "name": "@luly/router",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Router for a Basic Backend Development Framework with Hexagonal Architecture based on Express",
   "scripts": {
     "test": "echo \"No test specified\""
@@ -15,5 +15,6 @@
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
+    "typescript": "^5.4.2"
   }
 }

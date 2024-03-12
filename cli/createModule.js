@@ -207,8 +207,8 @@ function moduleNameValidation(name) {
     throw new Error('The module name cannot exceed 10 characters.');
   }
 
-  if (!/^[a-z0-9-]+$/.test(lowercaseName)) {
-    throw new Error('The module name can only contain lowercase letters, numbers, and the "-" character as a special character.');
+  if (!/^[a-z0-9_]+$/.test(lowercaseName)) {
+    throw new Error('The module name can only contain lowercase letters, numbers, and the underscore character as a special character.');
   }
 
   return lowercaseName;
